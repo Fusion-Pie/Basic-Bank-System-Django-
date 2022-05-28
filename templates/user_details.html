@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/static/user_details.css">
+        <script src="/static/user_details.js"></script>
+        <title>Details</title>
+    </head>
+    <body>
+
+        <div id="main_div">
+
+            <div id="personal_details">
+
+                <div id="heading"> 
+                    <span id="heading_text">Personal Details</span> 
+                </div>
+
+                <div id="details">
+
+                    <br>
+
+                    <input type="text" name="username" id="label" value="Username :" disabled>
+                    <input type="text" class="label_value" name="username_value" id="label_value" value={{uname}} disabled>
+
+                    <br><br>
+
+                    <input type="text" name="first_name" id="label" value="First name :" disabled>
+
+                    <!--If variable is empty-->
+                    {% if fname == '' %}
+                        <input type="text" class="label_value" name="first_name_value" id="fname_value" value='-' disabled>
+                    {% else %}
+                        <input type="text" class="label_value" name="first_name_value" id="fname_value" value={{fname}} disabled>
+                    {% endif %}
+
+                    <br><br>
+
+                    <input type="text" name="last_name" id="label" value="Last name :" disabled>
+
+                    {% if lname == '' %}
+                        <input type="text" class="label_value" name="last_name_value" id="label_value" value="-" disabled>
+                    {% else %}
+                        <input type="text" class="label_value" name="last_name_value" id="label_value" value={{lname}} disabled>
+                    {% endif %}
+                    
+
+                    <br><br>
+
+                    <input type="text" name="email" id="label" value="Email :" disabled>
+
+                    {% if email == '' %}
+                        <input type="text" class="label_value" name="email_value" id="label_value" value="-" disabled>
+                    {% else %}
+                        <input type="text" class="label_value" name="email_value" id="label_value" value={{email}} disabled>
+                    {% endif %}
+
+                    <br><br>
+
+                    <input type="text" name="join_month" id="label" value="Join month :" disabled>
+                    <input type="text" class="label_value" name="join_month_value" id="label_value" value={{join_month}} disabled>
+
+                </div>
+
+            </div>
+
+            <br>
+
+            <div id="bank_details">
+
+                <div id="heading"> 
+                    <span id="heading_text">Bank Details</span> 
+                </div>
+
+                <form action="/details/" method="post">
+
+                    {% csrf_token %}
+                    <div id="details">
+
+                        <br>
+    
+                        <input type="text" name="ifsc" id="label" value="IFSC Code :" disabled>
+                        <input type="text" class="label_value" name="ifsc_value" id="label_value" value={{ifsc}} disabled>
+    
+                        <br><br>
+    
+                        <input type="text" name="balance" id="label" value="Balance(in Rs) :" disabled>
+    
+    
+                        <input type="text" class="label_value" name="balance_value" id="balance_value" value="{{balance}}" disabled>
+
+                        <input type="text" class="label_value" name="add_value" id="add_value" disabled required>
+    
+                        <br><br>
+    
+                        <input type="button" value="Deposite Money" id="Deposite" name="btn_name" onclick="enable()">
+    
+                        <input type="submit" value="Update" id="Save" name="btn_name" onclick="func = setTimeout(save(), 5000)">
+    
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div id="home">
+                <a id="home_a" href="/home">Return to home</a>
+            </div>
+
+        </div>
+        
+    </body>
+</html>

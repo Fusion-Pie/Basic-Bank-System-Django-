@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/homePage.css">
+
+        <title>Pie Bank of India</title>
+    </head>
+
+    <body>
+
+        <div id="main_nav_div">
+
+            <img src="/static/images/try1.png" id="bank_logo">
+
+            <div id="name">
+                <span id="name_text">Pie Bank of India</span>
+
+                <span> | Welcome, {{request.user}} </span>
+            </div>
+
+            <form id="a2" method="post" action="/home/">
+
+                {% csrf_token %}
+
+                <input type="submit" value="Logout" id="logout" name="btn_name">
+
+            </form>
+    
+            <div id="links">
+    
+                <a id="a1" href="/home">Home</a>
+                <a id="a1" href="/details"><abbr id="abbr_val" title="Bank Details">Details</abbr></a>
+                <a id="a1" href="/payment"><abbr id="abbr_val" title="Payment">Pay</abbr></a>
+                <a id="a1" href="/history"><abbr id="abbr_val" title="Transaction History">History</abbr></a>
+                <a id="a1" href="/contact">Contact Us</a>
+                <a id="a1" href="/about">About Us</a>
+                
+            </div>
+
+        </div>
+
+        <div id="Moving_text_div">
+
+            <marquee id="Moving_text">
+                PBI nerver asks its customers for otp or any personal details. Any such call can be of
+                a fraudster. Please don't share such details.
+            </marquee>
+
+        </div>
+
+        <div id="banner">
+            
+            <img id="banner1" src="/static/images/homePage_banner1.jpg" alt="Banner Image">
+
+        </div>
+
+    </body>
+</html>

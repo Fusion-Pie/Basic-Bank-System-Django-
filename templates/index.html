@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block link_css %}
+            <link rel="stylesheet" href="/static/index.css">
+
+            <!-- For the alert message -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        {% endblock link_css %}  
+        <title>Pie Bank of India</title>
+    </head>
+    <body>
+
+        <div id="message_block">
+            {% block message_block %}
+
+                {% if messages %}
+                
+                    {% for message in messages %}
+
+                        {% if message.tags == 'error' %} 
+                            <!--Added from w3schools-->
+                            <div class="alert alert-danger alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Login Failed!!</strong> {{message}}
+                            </div>
+                        {% endif %}
+                
+                        {% if message.tags == 'success' %} 
+                            <!--Added from w3schools-->
+                            <div class="alert alert-success alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Nice!</strong> {{message}}
+                            </div>
+                        {% endif %}
+                        
+                    {% endfor %}
+            
+            {% endif %}
+
+            {% endblock message_block %}
+        </div>
+
+        <div id="left_div">
+            <img id="Bank_logo" src="/static/images/bank_logo.png" alt="Bank logo"> 
+
+            <p id="left_div_text">
+
+                WELCOME <br>TO<br>PBI
+
+            </p>
+        </div>
+
+        <div id="right_div">
+
+            {% block div %}
+
+            <form action="/" method="post">
+
+                {% csrf_token %}
+
+                <input id="registered_user" type="submit" value="Registered User" name="btn_name">
+
+            </form>
+            
+            <form action="/" method="post">
+
+                {% csrf_token %}
+
+                <input id="new_user" type="submit" value="New User" name="btn_name">
+
+            </form>
+
+            {% endblock div %}
+
+        </div>
+        
+    </body>
+</html>

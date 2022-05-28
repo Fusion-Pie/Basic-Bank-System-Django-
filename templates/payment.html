@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/static/payment.css">
+
+        <!-- For the alert message -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>Payment</title>
+    </head>
+    <body>
+
+        <div id="message_block">
+            {% block message_block %}
+
+                {% if messages %}
+                
+                    {% for message in messages %}
+
+                        {% if message.tags == 'error' %} 
+                            <!--Added from w3schools-->
+                            <div class="alert alert-danger alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Oops!</strong> {{message}}
+                            </div>
+                        {% endif %}
+                
+                        {% if message.tags == 'success' %} 
+                            <!--Added from w3schools-->
+                            <div class="alert alert-success alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Great!</strong> {{message}}
+                            </div>
+                        {% endif %}
+                        
+                    {% endfor %}
+            
+            {% endif %}
+
+            {% endblock message_block %}
+        </div>
+
+        <div id="home">
+            <a id="home_a" href="/home">Return to home</a>
+        </div>
+
+        <div id="main_div">
+
+            <div id="header">
+
+                <input type="text" name="heading" id="heading" value="Payment Details">
+
+            </div>
+
+            <form action="/payment/" method="post">
+
+                {% csrf_token %}
+
+                <div id="upper">
+
+                    <input type="text" name="ifsc_label" id="label" value="Receiver's IFSC" disabled>
+    
+                    <input type="text" name="ifsc_value" id="label_val" placeholder="Enter IFSC" required>
+    
+                    <br><br>
+    
+                    <input type="text" name="Amount_label" id="label" value="Amount" disabled>
+    
+                    <input type="text" name="amount_value" id="label_val" placeholder="Enter Amount" required>  
+                    
+                </div>
+    
+                <div id="lower">
+    
+                    <input type="submit" value="Pay now" id="pay" name = "btn_name">
+    
+                </div>
+
+            </form>
+
+        </div>
+        
+    </body>
+</html>

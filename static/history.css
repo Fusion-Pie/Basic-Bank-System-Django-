@@ -1,0 +1,43 @@
+#heading{
+    height: 40px;
+    background-color: #82EFEA;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
+#heading_text{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 20px;
+    color: #295D09;
+}
+
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+tr:nth-child(even){
+    background-color: #dddddd;
+}
+
+#home_a{
+    font-family: monospace;
+    text-decoration: none;
+    color: #295D09;
+    margin-right: 10px;
+    font-size: x-large;
+}
+
+#home{
+    margin-top: 20px;
+    text-align: center;
+}

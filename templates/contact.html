@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/contact.css">
+        <title>Contact Us</title>
+
+        <!-- Added from w3schools to add the alert message-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <div id="main">
+            
+            <!-- Use this for message loop
+                https://docs.djangoproject.com/en/4.0/ref/contrib/messages/ 
+            -->
+            {% if messages %}
+                {% for message in messages %}
+                    <!--Added from w3schools-->
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <div id="home">
+                <a id="home_a" href="/home">Return to home</a>
+            </div>
+
+            <div id="img">
+                    <img id="contact _img" src="/static/images/contact_img.png " alt="Contact Us Image">
+            </div>
+    
+            <!-- contact us heading -->
+            <!-- <p><b style="font-size: 100px; padding-left: 20px; color:#60daec; font-family: Arial;">Contact us</b></p> -->
+    
+            <div id = "div1">
+    
+                <p id="msg1">Message Us</p>
+    
+                <form method="post" action="/contact/">
+
+                    <!-- Added to generate token every time when user loads the website  -->
+                    {% csrf_token %}
+
+                    <input type="text" placeholder="  Name (required)" id="name" name="name">
+        
+                    <input type="email" placeholder="  E-mail Id (required)" id="email" name="email">
+        
+                    <input type="text" placeholder="  Text message (required)" id="message" name="message">
+    
+                    <input type="submit" id="btn">
+
+                </form>
+    
+                <p>---- Or ----</p>
+    
+    
+                <!-- links for contacting -->
+                <table>
+    
+                    <tr>
+                        
+                        <a href="https://www.linkedin.com/in/piyush-hatewar-62098a1b4/" style="padding-right: 20px;"><img src="/static/images/linkedin_32px.png" alt="linkedin handel"></a>
+    
+                        <a><img src="/static/images/twitter_32px.png" alt="twitter handel"></a>
+    
+                        <a style="padding-left: 20px;"><img src="/static/images/instagram_32px.png" alt="instagram handel"></a>
+    
+                    </tr>
+    
+                </table>
+    
+            </div>
+
+        </div>
+        
+    </body>
+</html>
+
+<!-- zendesk contact page idea -->

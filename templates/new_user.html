@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+
+{% block link_css %}
+    <link rel="stylesheet" href="/static/res_user.css">
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/new_user.css">
+
+    <!-- For the alert message -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% endblock link_css %}
+
+{% block message_block %}
+
+    {% if messages %}
+        
+        {% for message in messages %}
+
+            {% if message.tags == 'error' %} 
+                <!--Added from w3schools-->
+                <div class="alert alert-danger alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Login Failed!</strong> {{message}}
+                </div>
+            {% endif %}
+
+            {% comment %} {% if message.tags == 'success' %} 
+                <!--Added from w3schools-->
+                <div class="alert alert-success alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Login Success!</strong> {{message}}
+                </div>
+            {% endif %} {% endcomment %}
+            
+        {% endfor %}
+
+    {% endif %}
+
+{% endblock message_block %}
+
+{% block div %}
+
+    <form action="/" method="post">
+
+        {% csrf_token %}
+
+        <div id="log_div">
+
+            <input id="username" type="text" name="username" placeholder="Enter Username">
+
+            <br><br>
+
+            <input id="first_name" type="text" name="firstname" placeholder="Enter Firstname">
+
+            <br><br>
+
+            <input id="last_name" type="text" name="lastname" placeholder="Enter Lastname">
+
+            <br><br>
+
+            <input id="email" type="text" name="email" placeholder="Enter e-mail">
+
+            <br><br>
+
+            <input id="password" type="password" name="password" placeholder="Enter Password">
+
+            <br><br>
+
+            <input id="create_user" type="submit" value="Create User" name="btn_name">
+
+        </div>
+
+    </form>
+
+{% endblock div %}

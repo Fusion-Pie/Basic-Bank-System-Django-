@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/static/history.css">
+        <title>Payment History</title>
+    </head>
+    <body>
+        
+        <div id="heading"> 
+            <span id="heading_text">Payment History</span> 
+        </div>
+
+        {% if msg == 'yes' %}
+
+            <div id="message">
+
+                <label>Seems like you haven't done any payments to anu user</label>
+
+            </div>
+        {% else %}
+            <table>
+                <tr>
+                    <th>Receiver IFSC</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+
+                {% for t in trans %}
+
+                <tr>
+                    <td>{{t.Transaction_to}}</td>
+                    <td>{{t.Amount}}</td>
+                    <td>{{t.date}}</td>
+                    <td>{{t.status}}</td>
+                  </tr>
+
+                {% endfor %}
+
+            </table>
+            
+        {% endif %}
+
+        <div id="home">
+            <a id="home_a" href="/home">Return to home</a>
+        </div>
+
+    </body>
+</html>
