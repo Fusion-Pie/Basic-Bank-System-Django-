@@ -1,0 +1,87 @@
+#main_nav_div{
+    height: 49px;
+    background-color: #82EFEA;
+    border-radius: 5px;
+}
+
+#bank_logo{
+    float: left;
+    margin-top: 6px;
+    margin-left: 10px;
+}
+
+#name{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #295D09;
+    margin-left: 20px;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+ 
+#links{
+    float: right;
+    font-size: larger;
+    margin-top: 13px;
+}
+
+#a1{
+    padding: 15px;
+    text-align: center;
+    color: #295D09;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#a2{
+    float: right;
+}
+
+#logout{
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 18px;
+    border: 0;
+    background-color: #82EFEA;
+    color: #295D09;
+    padding: 13px;
+    margin-left: 5px;
+}
+
+#a1:hover{
+    background-color: #E9EBED;
+}
+
+#logout:hover{
+    background-color: #E9EBED;
+}
+
+#Moving_text_div{
+    margin-top: 10px;
+}
+
+#Moving_text{
+    color: red;
+    animation-duration: 4s;
+    animation: color_change 4s infinite;
+    font-size: 16px;
+    font-family: monospace;
+}
+
+@keyframes color_change{
+    0%  {   color: red;}
+    50% {   color: blue;}
+}
+
+#banner{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#abbr_val{
+    text-decoration: none;
+}

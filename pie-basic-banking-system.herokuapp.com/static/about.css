@@ -1,0 +1,88 @@
+body{
+    background-image: url('/static/images/about_back.png');
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+#home_a{
+    float: right;
+    font-family: monospace;
+    text-decoration: none;
+    color: #295D09;
+    margin-right: 10px;
+    font-size: x-large;
+    margin-top: -130px;
+}
+
+#upp_div1{
+    font-family: monospace;
+    font-weight: bolder;
+    color: #295D09;
+    font-size: 100px;
+    margin-left: 35%;
+    margin-top: 10%;
+    border-bottom: 8px double #295D09;
+    width: fit-content;
+} 
+
+#main_body{
+    height: 100%;
+    width: 100%;
+    margin-top: 350px;
+    text-align: center;
+}
+
+#about1{
+    height: 300px;
+    width: 90%;
+    margin-left: 80px;
+}
+
+#about1_left_div{
+    width: 300px;
+    height: 300px;
+    float: left;
+}
+
+#about1_right_div{
+    width: 70%;
+    float: right;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 50px;
+    color: #295D09;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+#about2{
+    height: 300px;
+    width: 90%;
+    margin-left: 80px;
+    margin-top: 50px;
+}
+
+#about2_left_div{
+    width: 70%;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 50px;
+    color: #295D09;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+#about2_right_div{
+    width: 300px;
+    height: 300px;
+    float: right;
+}
+
+#footer{
+    margin-top: 50px;
+    font-size: large;
+    color: #295D09;
+    font-family: monospace;
+    font-weight: bold;
+}

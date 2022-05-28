@@ -134,4 +134,4 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-STATIC_ROOT = "/var/www/pie-basic-banking-system.herokuapp.com/static/"
+STATIC_ROOT = "pie-basic-banking-system.herokuapp.com/static/"
