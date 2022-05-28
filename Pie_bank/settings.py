@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-a4-drw6wdg6grlbmo_16k)chav=#!m1_a^n%y)abfu7iae*yzw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','pie-basic-banking-system.herokuapp.com']
 
 # APPEND_SLASH = False
 
